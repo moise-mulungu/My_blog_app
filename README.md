@@ -8,7 +8,7 @@ The Blog app is a classic example of a blog website. It is a fully functional we
 
 ## Description
 
-> On this milestone, I created a data model.
+> On this milestone, I processed data in models.
 
 ## Built With
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   poster = Post.new(author_id: 1, title: 'My first post', text: 'This is my first post', comment_counter: 12, likes_counter: 9)
-  
+
   before { poster.save }
   it 'is valid with valid attributes' do
     expect(poster).to_not be_valid

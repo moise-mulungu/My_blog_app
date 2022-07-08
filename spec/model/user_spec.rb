@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   author = User.new(name: 'John Doe', photo: 'https://example.com/photo.jpg', bio: 'he was born in 1990 in England', post_counter: 15)
-  
+
   before { author.save }
 
   it 'is valid with valid attributes' do
@@ -37,10 +37,9 @@ end
 
 RSpec.describe Post, type: :model do
   describe 'Validations for the post model' do
-  before(:each) do
-
-    @user = User.new(name: 'Tom', bio: 'I am a developer', posts_counter: 0)
-    @post = Post.new(author: @user, title: 'This is a post', text: 'This is a post text', likes_counter: 0, comment_counter: 0)
-  end
+    before(:each) do
+      @user = User.new(name: 'Tom', bio: 'I am a developer', posts_counter: 0)
+      @post = Post.new(author: @user, title: 'This is a post', text: 'This is a post text', likes_counter: 0, comment_counter: 0)
+    end
   end
 end

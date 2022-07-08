@@ -33,6 +33,13 @@ RSpec.describe User, type: :model do
     author.post_counter = -1
     expect(author).to_not be_valid
   end
+
+  it 'is recent_posts' do
+    expect(author.recent_posts).to be_a(ActiveRecord::Relation)
+  end
+  it 'has recent_posts with 3 posts' do
+    expect(author.recent_posts.count).to_not eq(3)
+  end
 end
 
 RSpec.describe Post, type: :model do

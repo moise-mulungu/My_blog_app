@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     resources :likes
     resources :comments
   end
+  resources :posts do
+    resources :likes
+    resources :comments
+  end
+  
   # Defines the root path route ("/")
   # root "articles#index"
 end

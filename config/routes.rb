@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     resources :likes
     resources :comments
   end
-  
+  resources :likes
+  resources :comments
   # Defines the root path route ("/")
   # root "articles#index"
 end

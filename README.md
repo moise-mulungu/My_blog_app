@@ -8,7 +8,7 @@ The Blog app is a classic example of a blog website. It is a fully functional we
 
 ## Description
 
-> On this milestone, I added routes, actions, and view files for each controller.
+> On this milestone, I wrote tests for controllers.
 
 ## Built With
 

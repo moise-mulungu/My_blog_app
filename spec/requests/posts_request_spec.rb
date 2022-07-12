@@ -20,11 +20,10 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(:success)
     end
     it "renders 'show' view" do
-      expect(response).to render_template(locals: 'posts/show' )
+      expect(response).to render_template(locals: 'posts/show')
     end
     it 'renders contents in the view' do
       expect(response.body).to include('Here is a list of all posts for a given user')
     end
-    
   end
 end

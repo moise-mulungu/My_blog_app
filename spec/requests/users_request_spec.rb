@@ -16,7 +16,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /show' do
     before(:example) { get users_path }
-  
+
     it 'responds with the code 400' do
       expect(response).to have_http_status(:success)
     end

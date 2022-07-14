@@ -3,9 +3,9 @@ class Post < ApplicationRecord
   has_many :likes, class_name: 'Like', foreign_key: :post_id
   has_many :comments, class_name: 'Comment', foreign_key: :post_id
 
-  after_save :update_post_counter
+  # after_save :update_post_counter
 
-  private
+  # private
 
   def update_post_counter
     author.increment!(:posts_counter)

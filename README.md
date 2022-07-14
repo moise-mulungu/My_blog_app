@@ -8,7 +8,7 @@ The Blog app is a classic example of a blog website. It is a fully functional we
 
 ## Description
 
-> On this milestone, I added both index and show meethod views.
+> On this milestone, I added Post and Comment forms on behalf of current_user method.
 
 ## Built With
 

@@ -1,1 +1,29 @@
-<p>Here is a list of all posts, comments, and likes for a given user</p>
+<%= stylesheet_link_tag "application"%>
+
+<div class="show_container">
+  <div class="head">
+    <img src="<%=@user.photo%>" alt="Userimage">
+    <div class="user_details">
+      <h3><%= @user.name %></h3>
+      <p>Number of posts: <%=@user.post_counter%>
+    </div>
+  </div>
+
+  <div class="userBio">
+    <h3>Bio</h3>
+    <p><%=@user.bio%></p>
+  </div>
+</div>
+
+<%@user.recent_posts.each do |post|%>
+  <div class="user_post">
+    <h3>Post #<%=post.id%></h3>
+    <p><%=post.text%></p>
+
+    <div class="likes_comments">
+      <p>Comments: <%=post.comment_counter%></p>
+      <p>Likes: <%=post.likes_counter%></p>
+    </div>
+  </div>
+<%end%>
+<button type="button">See all posts</button>

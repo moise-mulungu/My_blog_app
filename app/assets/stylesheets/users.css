@@ -1,0 +1,37 @@
+/* body {
+    background-color: #f5f5f5;
+}
+.user_box {
+    display: flex;;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 960px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+
+.user_box{
+    font-size: 36px;
+}
+.user_box > div {
+    font-size: 26px;
+}
+
+.user_box > .numbers_of_posts {
+    font-size: 18px;
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.nav-bar > h1 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+} */

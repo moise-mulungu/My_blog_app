@@ -1,1 +1,12 @@
-<p>Here is a list of all users for a given user</p>
+<h1>User pages </h1>
+<% @users.each do |item| %>
+   <%= link_to user_path(item) do%>
+      <div>
+      <span><img src=<%= item.photo %></span>
+      <span>
+      <h3><%= item.name %></h3>
+      <p>Number of post: <%= item.post_counter %> </p>
+      </span>
+      </div>
+   <% end %>
+<% end %>

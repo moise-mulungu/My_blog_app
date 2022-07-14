@@ -1,1 +1,14 @@
-<p>Here is a list of all users for a given user</p>
+<div class="container">
+    <% @users.each do |user| %>
+        <div class= "user_box">
+            <div>
+                <input type = "checkbox" id= "user_name"> 
+                <label for = "user_name">User name: <%= user.name %></label><br>
+                <img src="<%=user.photo%>" alt="User image" height="150" width="150" >
+                </div>
+            <div class="numbers_of_posts">
+                Number of posts: <%= user.posts.count %><br>
+            </div>
+        </div>
+    <% end %>
+</div>

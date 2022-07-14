@@ -6,7 +6,7 @@
       </div>
 </div>
 
-<%@users.update_post_counter.each do |post|%>
+<%@posts.each do |post|%>
   <div class="userPost">
     <h3>Post #<%=post.id%></h3>
     <p><%=post.text%></p>
@@ -23,6 +23,6 @@
   </div>
 <%end%>
 
-<div class="seeallposts">
+<div class="see allposts">
   <button type="button">Pagination</button>
 </div>

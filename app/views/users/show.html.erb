@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "application"%>
 
-<div class="individualUser">
-  <div class="userHeader">
+<div class="show_container">
+  <div class="head">
     <img src="<%=@user.photo%>" alt="Userimage">
     <div class="user_details">
       <h3><%= @user.name %></h3>
@@ -16,17 +16,14 @@
 </div>
 
 <%@user.recent_posts.each do |post|%>
-  <div class="userPost">
+  <div class="user_post">
     <h3>Post #<%=post.id%></h3>
     <p><%=post.text%></p>
 
-    <div class="post_likes_comments">
+    <div class="likes_comments">
       <p>Comments: <%=post.comment_counter%></p>
       <p>Likes: <%=post.likes_counter%></p>
     </div>
   </div>
 <%end%>
-
-<div class="seeallposts">
-  <button type="button">See all posts</button>
-</div>
+<button type="button">See all posts</button>

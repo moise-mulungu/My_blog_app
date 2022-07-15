@@ -7,6 +7,7 @@
       <h3><%= @user.name %></h3>
       <p>Number of posts: <%=@user.post_counter%>
     </div>
+    <%= link_to "Add a post", new_user_post_path(@user) %>
   </div>
 
   <div class="userBio">
@@ -15,15 +16,18 @@
   </div>
 </div>
 
-<%@user.recent_posts.each do |post|%>
-  <div class="user_post">
-    <h3>Post #<%=post.id%></h3>
-    <p><%=post.text%></p>
+<%=@user.recent_posts.each do |post|%>
+  <%= link_to user_posts_path(@user) do %>
+    <div class="user_post">
+      <h3>Post <%=post.id%></h3>
+      <p><%=post.text%></p>
 
-    <div class="likes_comments">
-      <p>Comments: <%=post.comment_counter%></p>
-      <p>Likes: <%=post.likes_counter%></p>
+      <div class="likes_comments">
+        <p>Comments: <%=post.comment_counter%></p>
+        <p>Likes: <%=post.likes_counter%></p>
+      </div>
     </div>
-  </div>
+  <% end %>
 <%end%>
-<button type="button">See all posts</button>
+
+<%= link_to "See all posts", user_posts_path(user_id: @user.id) %>

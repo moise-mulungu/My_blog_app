@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(author: @user)
+    @posts = Post.where(author: current_user)
   end
 
   def show
@@ -13,8 +13,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @author = User.find(params[:user_id])
-    @post = @author.posts.new(post_params)
+    @post = Post.new(post_params)
+    @post.author_id = current_user.id
+
+    @post.likes_counter = 0
+    @post.comment_counter = 0
 
     if @post.save
       redirect_to user_path(id: @post.author_id)
@@ -24,6 +27,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.permit(:title, :text)
   end
 end

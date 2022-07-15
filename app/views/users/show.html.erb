@@ -16,10 +16,10 @@
   </div>
 </div>
 
-<%@user.recent_posts.each do |post|%>
+<%=@user.recent_posts.each do |post|%>
   <%= link_to user_posts_path(@user) do %>
     <div class="user_post">
-      <h3>Post #<%=post.id%></h3>
+      <h3>Post <%=post.id%></h3>
       <p><%=post.text%></p>
 
       <div class="likes_comments">
@@ -29,5 +29,5 @@
     </div>
   <% end %>
 <%end%>
-<button type="button">See all posts</button>
+
 <%= link_to "See all posts", user_posts_path(user_id: @user.id) %>

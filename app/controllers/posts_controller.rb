@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to user_path(id: @post.author_id)
     else
-      render :new, alert: "Post failed to save."
+      render :new, alert: 'Post failed to save.'
     end
   end
 

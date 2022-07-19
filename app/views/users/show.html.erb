@@ -5,7 +5,7 @@
     <img src="<%=@user.photo%>" alt="Userimage">
     <div class="user_details">
       <h3><%= @user.name %></h3>
-      <p>Number of posts: <%=@user.post_counter%>
+      <p>Number of post: <%=@user.post_counter%>
     </div>
     <%= link_to "Add a post", new_user_post_path(@user) %>
   </div>

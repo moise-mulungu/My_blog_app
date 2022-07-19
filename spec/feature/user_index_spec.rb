@@ -1,37 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe 'users index', type: :feature do
-  before(:each) do
-    @first_user = User.create(name: 'John', photo:'', bio: 'Chemist from Russia')
-    @second_user = User.create(name: 'Jane', photo:'', bio: 'Physicist from Germany')
-    @first_user.save
-    @second_user.save
-
-    5.times do |i|
-      @post = Post.create(title: "Post #{i}", content: "Content #{i}", author_id: @first_user.id, text: This is a text #{i}")
+RSpec.describe 'Testing that user index page', type: :feature do
+    before(:each) do
+      @user = User.create(name: 'Moise', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from Congo.', post_counter: 5)
+      visit users_path
     end
-    visit user_path(@first_user)
-  end
 
-  describe 'User index page' do
-    it 'Shows the username' do
-      expect(page).to have_content('Jane')
+    it 'Shows users names.' do
+      expect(page).to have_content(@user.name)
     end
 
     it "Shows the user's photo" do
-      expect(page).to have_css('.user-image')
+       expect(page.first('img')['src']).to have_content 'https://unsplash.com/photos/F_-0BxGuVvo'
     end
 
-    it 'Shows the number of posts' do
-      all(:css, '.number_posts').each do |post|
-        expect(post).to have_content('Number of posts:')
-      end
+    it "Shows the number of posts each user has written" do
+       expect(page).to have_content('Number of post: 5')
     end
 
-    it "after clicking on the user, it will be redirected to that user's show page" do
-      expect(page).to have_content('Signed in successfully.')
-      expect(page).to have_content 'Jane'
-      expect(page).to have_no_content('See All Posts')
+    it "Shows the number of posts each user has written" do
+       click_link @user.name
+       expect(current_path).to eq user_path(@user.id)
     end
-  end
 end

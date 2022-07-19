@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   private
 
   def update_post_counter
-    author.increment!(:post_counter)
+    author.increment!(:post_counter).includes(:posts)
   end
 
   validates :title, presence: true, length: { maximum: 250 }

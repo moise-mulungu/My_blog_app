@@ -21,13 +21,20 @@ The Blog app is a classic example of a blog website. It is a fully functional we
 1. Download the `Zip` or clone it with `git clone git@github.com:moise-mulungu/My_blog_app.git`
 3. Run: `bundle install` Then `rspec spec` on your terminal
 
-## Author
+## Authors
 
 👤 **Moise Mulungu**
 
 - GitHub: [@moise-mulungu](https://github.com/moise-mulungu)
 - Twitter: [@moise_mulungu](https://twitter.com/moise_mulungu)
 - LinkedIn: [Moïse (Musa) Mulungu](https://www.linkedin.com/in/moisemulungu/)
+
+👤 **Munezero Christian**
+
+- [GitHub](https://github.com/kaitcham)
+- [Twitter](https://twitter.com/kaitcham)
+- [LinkedIn](https://www.linkedin.com/in/kaitcham/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

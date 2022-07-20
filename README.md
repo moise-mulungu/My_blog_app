@@ -8,7 +8,7 @@ The Blog app is a classic example of a blog website. It is a fully functional we
 
 ## Description
 
-> On this milestone, I added integration specs for views and fix n+1 problems.
+> On this milestone,    We added devise in our App.
 
 ## Built With
 

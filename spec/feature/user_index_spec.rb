@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Testing that user index page', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Moise', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from Congo.', post_counter: 5)
+    @user = User.create(name: 'Moise', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from Congo.',
+                        post_counter: 5)
     visit users_path
   end
 

@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Testing that user show page', type: :feature do
   before(:each) do
-    @user = User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer.', post_counter: 3)
+    @user = User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer.',
+                        post_counter: 3)
 
-    @post = Post.create(title: 'First post', text: 'This is my first post', comment_counter: 0, likes_counter: 0, author: @user)
+    @post = Post.create(title: 'First post', text: 'This is my first post', comment_counter: 0, likes_counter: 0,
+                        author: @user)
     @comment = Comment.create(text: 'Keep it up!', author: User.first, post: Post.first)
 
     visit user_post_path(user_id: @post.author_id, id: @post.id)
